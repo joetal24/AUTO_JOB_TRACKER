@@ -1,0 +1,8 @@
+[Unit]
+Description=Daily job scrape + alerts
+
+[Service]
+Type=oneshot
+WorkingDirectory=__APP_DIR__/backend
+EnvironmentFile=__APP_DIR__/backend/.env
+ExecStart=__APP_DIR__/backend/.venv/bin/python scheduler.py --alert

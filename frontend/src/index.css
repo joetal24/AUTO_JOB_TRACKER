@@ -1,0 +1,119 @@
+:root {
+  --coffee: #6f4e37;
+  --coffee-dark: #4a342b;
+  --coffee-soft: #efe7dd;
+  --cream: #f7f2e9;
+  --cream-card: #fdfaf4;
+  --grey: #7d766d;
+  --grey-line: #e2d9c9;
+  --ink: #35281f;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+.app { max-width: 1200px; margin: 0 auto; padding: 20px 16px 60px; }
+
+header {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding-bottom: 16px; border-bottom: 3px solid var(--coffee);
+  margin-bottom: 20px;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.logo {
+  background: var(--coffee); color: var(--cream-card);
+  font-weight: 700; border-radius: 10px; padding: 6px 10px;
+  font-size: 14px; letter-spacing: 1px;
+}
+header h1 { font-size: 22px; margin: 0; }
+.stats { color: var(--grey); font-size: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  background: var(--coffee-soft); color: var(--coffee-dark);
+  border-radius: 999px; padding: 3px 12px; font-size: 12px;
+}
+header .btn { margin-left: auto; }
+
+.tabs { display: flex; gap: 4px; background: var(--coffee-soft); border-radius: 10px; padding: 4px; }
+.tab {
+  border: 0; background: transparent; color: var(--coffee-dark);
+  font-size: 14px; font-weight: 600; padding: 8px 16px; border-radius: 8px;
+  cursor: pointer;
+}
+.tab.on { background: var(--coffee); color: var(--cream-card); }
+
+.btn {
+  padding: 9px 16px; border: 0; border-radius: 8px; font-size: 14px;
+  cursor: pointer; font-weight: 600;
+}
+.btn.primary { background: var(--coffee); color: var(--cream-card); }
+.btn.primary:hover { background: var(--coffee-dark); }
+.btn.ghost {
+  background: transparent; color: var(--coffee-dark);
+  border: 1px solid var(--grey-line);
+}
+.btn.ghost:hover { border-color: var(--coffee); }
+.btn:disabled { opacity: .6; cursor: wait; }
+
+.scrape { display: flex; flex-direction: column; gap: 16px; max-width: 900px; }
+.row { display: flex; gap: 10px; margin-top: 14px; }
+.row .btn { width: auto; }
+
+.layout { display: grid; grid-template-columns: 330px 1fr; gap: 16px; align-items: start; }
+aside { display: flex; flex-direction: column; gap: 16px; }
+
+.card {
+  background: var(--cream-card); border: 1px solid var(--grey-line);
+  border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(74, 52, 43, .06);
+}
+.card h2 {
+  font-size: 15px; margin: 0 0 4px; color: var(--coffee-dark);
+  border-left: 3px solid var(--coffee); padding-left: 8px;
+}
+.hint { color: var(--grey); font-size: 13px; margin: 6px 0 12px; line-height: 1.4; }
+
+.card input, .card select, .card textarea {
+  width: 100%; padding: 9px 10px; margin-bottom: 8px;
+  border: 1px solid var(--grey-line); border-radius: 8px;
+  font-size: 14px; background: #fff; font-family: inherit;
+  color: var(--ink);
+}
+.card textarea { resize: vertical; }
+.card .btn { width: 100%; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.grid input, .grid select { margin-bottom: 0; }
+
+.watched-list { list-style: none; margin: 0; padding: 0; }
+.watched-list li {
+  padding: 7px 0; border-bottom: 1px solid var(--grey-line);
+  font-size: 13px;
+}
+.watched-list li:last-child { border-bottom: 0; }
+.watched-list a { color: var(--coffee); text-decoration: none; }
+.watched-list a:hover { text-decoration: underline; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--grey-line); }
+th { color: var(--grey); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+tr:hover td { background: var(--coffee-soft); }
+td a { color: var(--coffee-dark); text-decoration: none; font-weight: 600; }
+td a:hover { text-decoration: underline; }
+
+.new {
+  margin-left: 6px; background: var(--coffee); color: var(--cream-card);
+  border-radius: 999px; padding: 1px 8px; font-size: 11px; font-weight: 700;
+}
+.tag {
+  border-radius: 999px; padding: 2px 10px; font-size: 11px; font-weight: 600;
+}
+.tag-watched { background: var(--coffee-soft); color: var(--coffee-dark); }
+.tag-keyword { background: #e6e2da; color: var(--grey); }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+}

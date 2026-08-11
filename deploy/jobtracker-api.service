@@ -1,0 +1,12 @@
+[Unit]
+Description=Auto Job Tracker API
+After=network.target
+
+[Service]
+WorkingDirectory=__APP_DIR__/backend
+EnvironmentFile=__APP_DIR__/backend/.env
+ExecStart=__APP_DIR__/backend/.venv/bin/python -m uvicorn app:app --host 0.0.0.0 --port 8000
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

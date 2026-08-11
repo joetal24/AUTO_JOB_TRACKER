@@ -142,4 +142,3 @@ from FastAPI.
 - Dedup is by job URL — a reposted offer with a new URL shows as new.
 - The generic watched-page extractor looks for links with job-ish URLs and
   uses the anchor text as the title; messy pages may need per-site tweaks.
-# AUTO_JOB_TRACKER
